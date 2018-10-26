@@ -6,4 +6,4 @@ SELECT event, repo.id, repo.name, COUNT(*) as count FROM (
 )
 WHERE event = '"closed"' OR event = '"opened"' OR event = '"reopened"'
 GROUP BY event, repo.id, repo.name
-ORDER BY repo.id
+ORDER BY repo.id, event

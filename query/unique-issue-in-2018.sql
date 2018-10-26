@@ -11,8 +11,9 @@ SELECT repo.name, repo.id, COUNT(*) as totalIssue FROM (
   [githubarchive:month.201808],
   [githubarchive:month.201809],
   [githubarchive:month.201810]
-  WHERE type = 'IssuesEvent' 
+  WHERE type = 'IssuesEvent'
   GROUP BY idissue, repo.id, repo.name
 )
 GROUP BY repo.name, repo.id
 ORDER BY totalIssue
+LIMIT 30
